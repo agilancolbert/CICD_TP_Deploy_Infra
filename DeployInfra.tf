@@ -1,3 +1,7 @@
+terraform {
+  backend "devops-efrei-agikexel" {}
+}
+
 provider "aws" {
   region = "eu-west-1"
 }
