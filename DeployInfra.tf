@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "devops-efrei-agikexel"
-    key    = "WebApache/${var.env}/DeployInfra/infra.tfstate"
+    key    = "WebApache/dev/DeployInfra/infra.tfstate"
     region = "us-west-1"
   }
 }
