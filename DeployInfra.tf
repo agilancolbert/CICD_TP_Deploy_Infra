@@ -1,5 +1,5 @@
 terraform {
-  backend "devops-efrei-agikexel" {}
+  backend "local" {}
 }
 
 provider "aws" {
