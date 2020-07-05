@@ -206,5 +206,5 @@ resource "aws_db_instance" "default" {
   username             = "admin"
   password             = "azerty1234"
   parameter_group_name = "default.mysql5.7"
-  publicly_accessible = true
+  publicly_accessible = "true"
 }
