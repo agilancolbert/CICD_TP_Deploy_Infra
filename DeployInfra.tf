@@ -126,21 +126,21 @@ resource "aws_security_group" "allow_nat" {
 
 ## SG Rule egress
 resource "aws_security_group_rule" "web_egress_allow_all" {
-  type              = var.web_egress_allow_all["type"]
-  from_port         = var.web_egress_allow_all["from_port"]
-  to_port           = var.web_egress_allow_all["to_port"]
-  protocol          = var.web_egress_allow_all["protocol"]
-  cidr_blocks       = var.web_egress_allow_all["cidr_blocks"]
+  type              = "egress"
+  to_port           = 0
+  protocol          = "-1"
+  from_port         = 0
+  cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.allow_nat.id
 }
 
 ## SG Rule ingress
 resource "aws_security_group_rule" "ingress_allow_private" {
-  type              = var.ingress_allow_private["type"]
-  from_port         = var.ingress_allow_private["from_port"]
-  to_port           = var.ingress_allow_private["to_por"]
-  protocol          = var.ingress_allow_private["protocol"]
-  cidr_blocks       = var.ingress_allow_private["cidr_blocks"]
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = -1
+  cidr_blocks       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   security_group_id = aws_security_group.allow_nat.id
 }
 
