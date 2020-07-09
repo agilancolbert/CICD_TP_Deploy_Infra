@@ -126,22 +126,22 @@ resource "aws_security_group" "allow_nat" {
 
 ## SG Rule egress
 resource "aws_security_group_rule" "web_egress_allow_all" {
-  type              = var.web_egress_allow_all.type
-  to_port           = var.web_egress_allow_all.to_port
-  protocol          = var.web_egress_allow_all.protocol
-  from_port         = var.web_egress_allow_all.from_port
-  cidr_blocks       = var.web_egress_allow_all.cidr_blocks
-  security_group_id = aws_security_group.allow_nat.id
+type              = var.web_egress_allow_all["type"]
+  to_port           = var.web_egress_allow_all["to_port"]
+  protocol          = var.web_egress_allow_all["protocol"]
+  from_port         = var.web_egress_allow_all["from_port"]
+  cidr_blocks       = var.web_egress_allow_all["cidr_blocks"]
+  security_group_id = aws_security_group.allow_nat["id"]
 }
 
 ## SG Rule ingress
 resource "aws_security_group_rule" "ingress_allow_private" {
-  type              = var.ingress_allow_private.type
-  from_port         = var.ingress_allow_private.from_port
-  to_port           = var.ingress_allow_private.to_port
-  protocol          = var.ingress_allow_private.protocol
-  cidr_blocks       = var.ingress_allow_private.cidr_blocks
-  security_group_id = aws_security_group.allow_nat.id
+  type              = var.ingress_allow_private["type"]
+  from_port         = var.ingress_allow_private["from_port"]
+  to_port           = var.ingress_allow_private["to_port"]
+  protocol          = var.ingress_allow_private["protocol"]
+  cidr_blocks       = var.ingress_allow_private["cidr_blocks"]
+  security_group_id = aws_security_group.allow_nat["id"]
 }
 
 # Route Table
