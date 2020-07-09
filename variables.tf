@@ -161,44 +161,12 @@ variable "source_dest_check" {
 }    
 
  
-
 # Nat SG
 
 variable "name"{
   type = string
   default = "allow_web"
 }        
-
-
-
-
-## SG Rule egress
-
-
-variable "web_egress_allow_all" {
-    type = map
-    default = {
-        "type"              = "egress"
-        "from_port"         = 0
-        "to_port"           = 0
-        "protocol"          = -1
-        "cidr_blocks"       = ["0.0.0.0/0"]
-    }
-}
-
-## SG Rule ingress
-
-variable "ingress_allow_private" {
-    type = map
-    default = {
-        "type"              = "egress"
-        "from_port"         = 0
-        "to_port"           = 0
-        "protocol"          = -1
-        "cidr_blocks"       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
-    }
-}
-
 
 # Route Table
 ## Private
