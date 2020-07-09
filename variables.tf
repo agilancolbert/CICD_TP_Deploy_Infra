@@ -3,8 +3,4 @@ variable "env" {
   default = "dev"
 }
 
-variable "region" {
-  default = "us-west-1"
-}
-
 
