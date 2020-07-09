@@ -176,45 +176,27 @@ variable "name"{
 
 
 variable "web_egress_allow_all" {
-  type = list(object({
-    type = string
-    to_port = number
-    protocol = string
-    from_port = number
-    cidr_blocks = list(string)
-  
-  }))
-  default = [
-    {
-    type              = "egress"
-    to_port           = 0
-    protocol          = "-1"
-    from_port         = 0
-    cidr_blocks       = ["0.0.0.0/0"]
+    type = map
+    default = {
+        "type"              = "egress"
+        "from_port"         = 0
+        "to_port"           = 0
+        "protocol"          = -1
+        "cidr_blocks"       = ["0.0.0.0/0"]
     }
-  ]
 }
 
 ## SG Rule ingress
 
 variable "ingress_allow_private" {
-  type = list(object({
-    type = string
-    from_port = number
-    to_port = number
-    protocol = number
-    cidr_blocks = list(string)
-  
-  }))
-  default = [
-    {
-      type              = "egress"
-      from_port         = 0
-      to_port           = 0
-      protocol          = -1
-      cidr_blocks       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+    type = map
+    default = {
+        "type"              = "egress"
+        "from_port"         = 0
+        "to_port"           = 0
+        "protocol"          = -1
+        "cidr_blocks"       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
     }
-  ]
 }
 
 
@@ -233,5 +215,4 @@ variable "cidr_block_main_pri"{
 variable "cidr_block_pub"{
   type =string
   default = "0.0.0.0/0"
-}  
-
+} 
