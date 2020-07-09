@@ -66,7 +66,7 @@ variable "cidr_block_spb2" {
 }
 
 variable "map_public_ip_on_launch_spb2" {
-  type = "string"
+  type = string
   default ="true"
 }
 
