@@ -47,12 +47,12 @@ variable "cidr_block_spb1" {
 }
 
 variable "map_public_ip_on_launch_spb1" {
-  type = "string"
+  type = string
   default ="true"
 }
 
 variable "availability_zone_spb1" {
-  type = "string"
+  type = string
   default = "eu-west-1a"
 }
 
@@ -71,7 +71,7 @@ variable "map_public_ip_on_launch_spb2" {
 }
 
 variable "availability_zone_spb2" {
-  type = "string"
+  type = string
   default = "eu-west-1b"
 }
 
@@ -83,12 +83,12 @@ variable "cidr_block_spb3" {
 }
 
 variable "map_public_ip_on_launch_spb3" {
-  type = "string"
+  type = string
   default ="true"
 }
 
 variable "availability_zone_spb3" {
-  type = "string"
+  type = string
   default = "eu-west-1c"
 }
 
@@ -103,12 +103,12 @@ variable "cidr_block_spr1" {
 }
 
 variable "map_public_ip_on_launch_spr1" {
-  type = "string"
+  type = string
   default ="false"
 }
 
 variable "availability_zone_spr1" {
-  type = "string"
+  type = string
   default = "eu-west-1a"
 }
 
@@ -121,12 +121,12 @@ variable "cidr_block_spr2" {
 }
 
 variable "map_public_ip_on_launch_spr2" {
-  type = "string"
+  type = string
   default ="false"
 }
 
 variable "availability_zone_spr2" {
-  type = "string"
+  type = string
   default = "eu-west-1b"
 }
 
@@ -139,12 +139,12 @@ variable "cidr_block_spr3" {
 }
 
 variable "map_public_ip_on_launch_spr3" {
-  type = "string"
+  type = string
   default ="false"
 }
 
 variable "availability_zone_spr3" {
-  type = "string"
+  type = string
   default = "eu-west-1c"
 }
 
@@ -154,13 +154,13 @@ variable "availability_zone_spr3" {
 
 
 variable ami   {
-  type = "string"
+  type = string
   default = "ami-0f630a3f40b1eb0b8"
 }
 
 
 variable "source_dest_check" {
-  type = "string"
+  type = string
   default = "false"
 }    
 
@@ -169,7 +169,7 @@ variable "source_dest_check" {
 # Nat SG
 
 variable "name"{
-  type = "string"
+  type = string
   default = "allow_web"
 }        
 
@@ -227,7 +227,7 @@ variable "ingress_allow_private" {
 ### Use Main Route Table
 
 variable "cidr_block_main_pri"{
-  type ="string"
+  type =string
   default = "0.0.0.0/0"
 }  
 
@@ -235,7 +235,7 @@ variable "cidr_block_main_pri"{
 ## Public
 
 variable "cidr_block_pub"{
-  type ="string"
+  type =string
   default = "0.0.0.0/0"
 }  
 
