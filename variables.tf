@@ -1,7 +1,3 @@
-terraform {
-  backend "s3" {}
-}
-
 variable "region"{
   default = "eu-west-1"
 }
