@@ -2,15 +2,6 @@ terraform {
   backend "s3" {}
 }
 
-provider "aws" {
-  region = "eu-west-1"
-}
-
-variable "env" {
-  type    = string
-  default = "dev"
-}
-
 # VPC
 resource "aws_vpc" "vpc" {
   cidr_block           = "10.0.0.0/16"
